@@ -1,15 +1,15 @@
-#Team Members:
+# Team Members:
 Team lead/instructor: Joseph Simmons
 Paula Teel
 Liliana Grajales
 Mark Stuebs
 
-##GitHub Details
+## GitHub Details
 Owner:
 URL:
 
 
-##eBird API  
+## eBird API  
 - API documentation
 - Activate 
 - Activation link from sign up email
