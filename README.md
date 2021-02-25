@@ -5,8 +5,8 @@ Liliana Grajales
 Mark Stuebs
 
 ## GitHub Details
-Owner:
-URL:
+Owner: Paula Teel
+URL: https://github.com/PJTeel/unit3-birdapp
 
 
 ## eBird API  
