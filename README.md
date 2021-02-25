@@ -35,8 +35,8 @@ All bird observations are valuable, and every sighting--no matter how common the
 ## Example Bird Page
 Flamingo Example: [https://ebird.org/species/grefla2/MX]()
 
-##Needs List
-###Bronze Level
+## Needs List
+### Bronze Level
 - Data is accessible by everyone without need to log in or sign up
 - Search by common name
 - Image
