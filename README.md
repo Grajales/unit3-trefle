@@ -6,18 +6,24 @@ Mark Stuebs
 
 ## GitHub Details
 Owner: Paula Teel
-URL: https://github.com/PJTeel/unit3-birdapp
+URL: [https://github.com/PJTeel/unit3-birdapp]()
 
 
 ## eBird API  
 - API documentation
+    [https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest]()
+- API Data info link:
+    [https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest]()
 - Activate 
 - Activation link from sign up email
 
-token string from above link
-Account Log in
+
+## Account Log in
 User name: chickadies
 Password: hummingbird
+API Key: ds3o3kshtmmo
+To sign up for a key: [https://ebird.org/api/keygen]()
+
 Get started with our eBird Essentials
 Bird Essentials
 The Explore Data tab is a good place to begin. Range maps show where species are found, bar charts show migration timing, and you can even sign up for Alerts to learn about interesting birds as soon as they are reported. The Explore a Location tool provides a dashboard style overview of all the eBird activity in a region. From here there are links to bar charts, recent sightings, and the best local birding hotspots.
