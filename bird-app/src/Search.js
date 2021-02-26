@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import plantArray from './plantArray';
 
 const SEARCH_BUTTON = 1;
 const COMMON_NAME_CB = 1;
@@ -9,16 +10,19 @@ const LOCATION_NAME_CB = 5;
 
 
 
+
 class Search extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            comName: '',
-            latlon: false,
-            sciName: false,
-            locationName: false
+            common_name: '',
+            family: '',
+            scientific_name: '',
+            imageURL: ''
         }
     }
+
+    
 
     handleSearch = (event) => {
         event.preventDefault();
@@ -43,17 +47,39 @@ class Search extends Component {
     }
 
     render() {
+
+        console.log('NEW - plantArray');
+        console.log( plantArray[0]);
+        console.log( plantArray[1]);
+        console.log( plantArray[2]);
+        
+
+
         console.log(`Search is here`);
+        let imageURL = "";
 
         //simplifies naming
-        const pBirds = this.props.plants
-        ;
+        const pPlants = this.props.plants;
+        console.log(pPlants);
+        if (pPlants.data) {
+            
+            
+            console.log(pPlants.data);
+            console.log(pPlants.data[0]);
+            console.log(pPlants.data[0].common_name);
+            console.log(pPlants.data[0].image_url);
+            
+            imageURL = pPlants.data[0].image_url.replace('https','http');
+            console.log(imageURL);
+        }
+        
+        
 
-        let cnIndex = pBirds.findIndex(this.getComName);
+        // let cnIndex = pPlants.findIndex(this.getComName);
 
 
-        console.log("Search Common Name = index: " + cnIndex);
-        console.log(pBirds[cnIndex]);
+        // console.log("Search Common Name = index: " + cnIndex);
+        // console.log(pPlants[cnIndex]);
 
         return (
             <div className='Search'>
@@ -71,6 +97,7 @@ class Search extends Component {
                             <option value="Mute Swan">Mute Swan</option>
                         </select>
                     </div>
+                    <img src={imageURL}/>
                     <div className='Search-Sci-Name'>
                         <input type='checkbox' name='sci-name' className='Search-Sci-Name-Cb' />
                         <label className='Search-Common-Name' >Scientific Name</label>
