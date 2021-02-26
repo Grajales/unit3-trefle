@@ -1,8 +1,8 @@
 # Team Members:
 Team lead/instructor: Joseph Simmons
-Paula Teel
-Liliana Grajales
-Mark Stuebs
+- Paula Teel
+- Liliana Grajales
+- Mark Stuebs
 
 ## GitHub Details
 Owner: Paula Teel
