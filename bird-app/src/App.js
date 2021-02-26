@@ -4,6 +4,8 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 //import Homepage from "./Homepage";
 //import Show from "./Show";
 import axios from 'axios';
+import Search from './Search';
+
 
 
 class App extends Component {
@@ -20,18 +22,13 @@ class App extends Component {
       }
     }
     let response = axios.get('https://api.ebird.org/v2/data/obs/KZ/recent', config
-      //  {
-      // headers: {
-      // 'X-eBirdApiToken: {blXevRI43xBgqWX7kwwUR177da5739b5}'
-      // Accept: 'application/json'
-
-      // }
     )
       .then(response => {
         console.log(response)
         this.setState({
           birds: response.data
         })
+
       })
       .catch(error => {
         console.log('look here', error)
@@ -42,9 +39,20 @@ class App extends Component {
     console.log(this.state.birds)
     return (
       <div>
-        <Link to='/'>
-          <h1>Bird List</h1>
-        </Link>
+        <main>
+          <Link to='/'>
+            <h1>Bird List</h1>
+          </Link>
+          <Switch>
+            <Route to='/search/'
+              render={(props) =>
+              (<Search {...this.state} />
+              )}
+            />
+          </Switch>
+
+        </main>
+
       </div>
     );
   }
