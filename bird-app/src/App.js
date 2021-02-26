@@ -12,21 +12,19 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      birds: []
+      plants: []
     }
   }
   componentDidMount = () => {
     let config = {
-      headers: {
-        'X-eBirdApiToken': 'ds3o3kshtmmo',
-      }
+      // headers: {
+      //        }
     }
-    let response = axios.get('https://api.ebird.org/v2/data/obs/KZ/recent', config
-    )
-      .then(response => {
+    let response = axios.get('https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals')
+       .then(response => {
         console.log(response)
         this.setState({
-          birds: response.data
+          plants: response.data
         })
 
       })
@@ -36,12 +34,12 @@ class App extends Component {
   }
   render() {
     // console.log(this.state)
-    console.log(this.state.birds)
+    console.log(this.state.plants)
     return (
       <div>
         <main>
           <Link to='/'>
-            <h1>Bird List</h1>
+            <h1>Plants List</h1>
           </Link>
           <Switch>
             <Route to='/search/'

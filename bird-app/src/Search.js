@@ -46,7 +46,8 @@ class Search extends Component {
         console.log(`Search is here`);
 
         //simplifies naming
-        const pBirds = this.props.birds;
+        const pBirds = this.props.plants
+        ;
 
         let cnIndex = pBirds.findIndex(this.getComName);
 
@@ -62,7 +63,8 @@ class Search extends Component {
                     <div className='Search-Common-Name'>
                         <input type='checkbox' disabled readOnly checked='1' name='common-name' className='Search-Common-Name-Cb' />
                         <label className='Search-Common-Name' >Common Name</label>
-                        <select name="birdsList" id="birds-list">
+                        <select name="birdsList" id="plants
+                        -list">
                             <option value="">Choose bird</option>
                             <option value="White-tailed Eagle">White-tailed Eagle</option>
                             <option value="Mew Gull">Mew Gull</option>
