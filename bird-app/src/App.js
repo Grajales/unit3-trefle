@@ -6,7 +6,16 @@ import axios from 'axios';
 import Search from './Search';
 import AboutMe from './AboutMe/AboutMe';
 import Show from './Show/Show';
+import List from './List';
+import DropDownList from "./HomePageList";
 
+const BASE_URL = 'https://trefle.io/api/v1/plants/search?'
+const CORS_URL = "https://cors-anywhere.herokuapp.com/"
+const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals"
+const PQUERY = "&q="
+const FRUIT = 0
+const VEGGIE = 1
+const FLOWER = 2
 
 
 class App extends Component {
@@ -14,7 +23,8 @@ class App extends Component {
     super(props)
     this.state = {
       plants: [],
-      species: this.props.species
+      speciesList: [],
+      species: []
     }
   }
   componentDidMount = () => {
@@ -22,8 +32,14 @@ class App extends Component {
       // headers: {
       //        }
     }
+<<<<<<< HEAD
+
+    let response = axios.get(CORS_URL+BASE_URL+TOKEN+PQUERY+ DropDownList[FRUIT][0])
+       .then(response => {
+=======
     let response = axios.get('https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals')
       .then(response => {
+>>>>>>> master
         console.log(response)
         this.setState({
           plants: response.data
@@ -37,7 +53,20 @@ class App extends Component {
   render() {
     // console.log(this.state)
     console.log("plants",this.state.plants)
-    console.log('Species',this.props.species)
+    let chosenData = this.state.plants.data
+    
+    if (chosenData){
+      
+      for (let i=0; i<chosenData.length; i++){
+        this.state.speciesList[i] = chosenData[i].links.self
+        this.state.species[i] = chosenData[i].scientific_name
+
+      }
+      console.log(this.state.speciesList)
+      console.log(this.state.species)
+    }
+    
+    // for (let i=0; i<)
     return (
       <div>
         <main>
@@ -50,7 +79,6 @@ class App extends Component {
           </Link>
 
           <Switch>
-<<<<<<< HEAD
           
           <Router>
             <Route exact path='/aboutme/' component={AboutMe} />
@@ -62,10 +90,14 @@ class App extends Component {
               )}
             />
             
-=======
             <Route path='/search/'
               render={(routerProps) =>
               <Search {...this.state} />
+              }> 
+              </Route>
+              <Route path='/list/'
+              render={(routerProps) =>
+              <List {...this.state} />
               }> 
               </Route>
             <Route path='/show/'
@@ -73,7 +105,6 @@ class App extends Component {
               <Show species={this.state} {...routerProps} />
               }> 
               </Route>
->>>>>>> master
           </Switch>
 
         </main >
