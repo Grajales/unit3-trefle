@@ -24,11 +24,11 @@ class Show extends Component {
     //       })
     //   }
     render(){
-       
+       let other = ""
         console.log('Species in Show',this.props.species.species[0].data.images)
         let speciesFlower = this.props.species.species[0].data.images.flower
         let speciesTree = this.props.species.species[0].data.images.bark
-        let speciesOther = this.props.species.species[0].data.images.$
+        let speciesOther = this.props.species.species[0].data.images.other
         let galleryFlower = [];
         let galleryTree = [];
         let galleryOther= [];

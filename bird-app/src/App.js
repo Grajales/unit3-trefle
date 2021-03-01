@@ -5,7 +5,7 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 //import Show from "./Show";
 import axios from 'axios';
 import Search from './Search';
-import Show from './Show';
+import Show from './Show/Show';
 
 
 
