@@ -5,6 +5,7 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 //import Show from "./Show";
 import axios from 'axios';
 import Search from './Search';
+import Show from './Show';
 
 
 
@@ -12,7 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      plants: []
+      plants: [],
+      species: this.props.species
     }
   }
   componentDidMount = () => {
@@ -34,19 +36,25 @@ class App extends Component {
   }
   render() {
     // console.log(this.state)
-    console.log(this.state.plants)
+    console.log("plants",this.state.plants)
+    console.log('Species',this.props.species)
     return (
       <div>
         <main>
           <Link to='/'>
-            <h1>Plants List</h1>
+            <h1>Header</h1>
           </Link>
           <Switch>
-            <Route to='/search/'
-              render={(props) =>
-              (<Search {...this.state} />
-              )}
-            />
+            <Route path='/search/'
+              render={(routerProps) =>
+              <Search {...this.state} />
+              }> 
+              </Route>
+            <Route path='/show/'
+              render={(routerProps) =>
+              <Show species={this.state} {...routerProps} />
+              }> 
+              </Route>
           </Switch>
 
         </main>
