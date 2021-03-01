@@ -5,6 +5,7 @@ import {    BrowserRouter as Router   } from "react-router-dom";
 import axios from 'axios';
 import Search from './Search';
 import AboutMe from './AboutMe/AboutMe';
+import Show from './Show/Show';
 
 
 
@@ -12,7 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      plants: []
+      plants: [],
+      species: this.props.species
     }
   }
   componentDidMount = () => {
@@ -34,19 +36,21 @@ class App extends Component {
   }
   render() {
     // console.log(this.state)
-    console.log(this.state.plants)
+    console.log("plants",this.state.plants)
+    console.log('Species',this.props.species)
     return (
       <div>
         <main>
 
           <Link to='/'>
-            <h1>Plants List</h1>
+            <h1>Header</h1>
           </Link>
           <Link to='/aboutme/'>
             <h1>About Us</h1>
           </Link>
 
           <Switch>
+<<<<<<< HEAD
           
           <Router>
             <Route exact path='/aboutme/' component={AboutMe} />
@@ -58,6 +62,18 @@ class App extends Component {
               )}
             />
             
+=======
+            <Route path='/search/'
+              render={(routerProps) =>
+              <Search {...this.state} />
+              }> 
+              </Route>
+            <Route path='/show/'
+              render={(routerProps) =>
+              <Show species={this.state} {...routerProps} />
+              }> 
+              </Route>
+>>>>>>> master
           </Switch>
 
         </main >

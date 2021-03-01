@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {    BrowserRouter as Router   } from "react-router-dom";
-
+import Species from './speciesArray.json';
 
 ReactDOM.render(
   <Router>
-    <App />
+    <App species={Species}/>
   </Router>,
   document.getElementById('root')
 );
