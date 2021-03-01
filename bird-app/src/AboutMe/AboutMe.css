@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  margin-left: 5vw;
+}
+
+.AboutMe-Intro-Div {
+  margin-left: 5vw;
+}
+
+.AboutMe-logo {
+  
+  height: 20vmin;
+  pointer-events: none;
+  border-radius: 10px;
+  border: solid rgb(12, 38, 12) 0.25vw;
+}
+
+.AboutMe-Team-Hdr{
+  margin-left: 5vw;
+}
+
+.AboutMe-Team{
+  margin-left: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.AboutMe-Cohort{
+  
+}
+
+.AboutMe-Img {
+  width: 25vmin;
+  height: 20vmin;
+  pointer-events: none;
+  border-radius: 10px;
+  border: solid rgb(12, 38, 12) 0.25vw;
+}
