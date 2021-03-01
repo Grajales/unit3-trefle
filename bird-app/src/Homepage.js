@@ -5,6 +5,7 @@ import plantArray from './plantArray';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
+
 class Homepage extends Component {
 
     render () {
@@ -24,10 +25,16 @@ class Homepage extends Component {
 
     return (
 
-        <div class='container'>
-               <h1>Homepage</h1>
-                {/* {plantsList} */}
-                <img src={plantPhoto} alt="Photo Here"/>
+        <div className='Homepage'>
+                 <div class='column'>
+                    <img src={plantPhoto} alt="Flowers"/>
+                </div>
+                <div class='column'>
+                    <img src={plantPhoto} alt="Trees"/>
+                </div>
+                <div class='column'>
+                    <img src={plantPhoto} alt="Vegetables"/>
+                </div>
 
         </div>
 

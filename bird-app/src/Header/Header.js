@@ -4,11 +4,11 @@ import './Header.css';
 
 function Header () {
     return (
-        <div className='top'>
-            <h1>Three Acorns and a Squirrel</h1>
+        <div className='Header'>
             <ul>
+            <h1>Three Acorns and a Squirrel</h1>
             <li><Link to='/'>
-            <h1>Plants List</h1>
+            <h1>About Us</h1>
           </Link>
           </li>
             </ul>

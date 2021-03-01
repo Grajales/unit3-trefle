@@ -1,4 +1,21 @@
-top {
-    background-color: lightgreen;
-    height: 1in;
+.Header {
+    height: .75in;
+    background-color: rgb(41, 102, 67);
+    color: rgb(59, 33, 18);
+    padding-top: .07in;
+}
+
+.Header li {
+    display: inline;
+    text-align: center;
+    float: right;
+    padding-right: .5in;
+}
+
+.Header h1 {
+    padding-top: 0;
+    margin-top: 0;
+    display: inline;
+    padding-top: .25in;
+    
 }

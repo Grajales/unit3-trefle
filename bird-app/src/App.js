@@ -40,10 +40,9 @@ class App extends Component {
     // console.log(this.state)
     console.log(this.state.plants)
     return (
-      <div>
+      <div className="App">
         <main>
           <Header></Header>
-          
           <Switch>
             <Router>
               <Route to='/homepage/'
@@ -52,12 +51,9 @@ class App extends Component {
                 )}
               />
             </Router>
-
           </Switch>
-
-          <Footer></Footer>
         </main>
-
+        <Footer></Footer>
       </div>
     );
   }
