@@ -15,11 +15,11 @@ class AboutMe extends Component {
       <div>
         <main>
           <div className='AboutMe-Intro-Div'>
-            <h1 className='AboutMe-Intro-Hdr'>Three Acorns</h1>
+            <h1 className='AboutMe-Intro-Hdr'>Three Acorns and a Squirel</h1>
             <img src={ThreeAcorns} alt="three acorns image" className='AboutMe-logo' />
             <p className='AboutMe-Intro'>
               This project has been a collaborative effort between the three cohorts/acorns below.
-              <p>Through this project we have had the pleasure to work closely with Joseph, our instructor, who
+              <p>Through this project we have had the pleasure to work closely with Joseph/squirel, our instructor, who
               deserves special thanks for answering all our questions with a smile on his face.
               His knowledge, and humor, have helpded each of us grow.</p>
               <p>While none of us are Oaks at this time, we are, with time and encouagement growing.</p></p>

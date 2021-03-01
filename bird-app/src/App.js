@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, Switch, Redirect } from "react-router-dom";
-import {    BrowserRouter as Router   } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import axios from 'axios';
 import Search from './Search';
 import AboutMe from './AboutMe/AboutMe';
 import Show from './Show/Show';
-
+const FRUIT_SEARCH = '&q=coconut'
 
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
       // headers: {
       //        }
     }
-    let response = axios.get('https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals')
+    let response = axios.get('https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals'+FRUIT_SEARCH)
       .then(response => {
         console.log(response)
         this.setState({
@@ -36,8 +36,8 @@ class App extends Component {
   }
   render() {
     // console.log(this.state)
-    console.log("plants",this.state.plants)
-    console.log('Species',this.props.species)
+    console.log("plants", this.state.plants)
+    console.log('Species', this.props.species)
     return (
       <div>
         <main>
@@ -50,30 +50,20 @@ class App extends Component {
           </Link>
 
           <Switch>
-<<<<<<< HEAD
-          
-          <Router>
-            <Route exact path='/aboutme/' component={AboutMe} />
-          
-          </Router>
-            <Route to='/search/'
-              render={(props) =>
-              (<Search {...this.state} />
-              )}
-            />
-            
-=======
-            <Route path='/search/'
-              render={(routerProps) =>
-              <Search {...this.state} />
-              }> 
+
+            <Router>
+              <Route exact path='/aboutme/' component={AboutMe} />
+            </Router>
+              <Route path='/search/'
+                render={(routerProps) =>
+                  <Search {...this.state} />
+                }>
               </Route>
-            <Route path='/show/'
-              render={(routerProps) =>
-              <Show species={this.state} {...routerProps} />
-              }> 
+              <Route path='/show/'
+                render={(routerProps) =>
+                  <Show species={this.state} {...routerProps} />
+                }>
               </Route>
->>>>>>> master
           </Switch>
 
         </main >
