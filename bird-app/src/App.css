@@ -3,7 +3,11 @@ HTML, body {
   padding: 0;
   background-color: cornsilk;
   height: 100%vh;
+}
 
+.App-logo {
+  height: 3vmin;
+  pointer-events: none;
 }
 
 .App {

@@ -7,7 +7,7 @@ function Header () {
         <div className='Header'>
             <ul>
             <h1>Three Acorns and a Squirrel</h1>
-            <li><Link to='/'>
+            <li><Link to='/aboutme'>
             <h1>About Us</h1>
           </Link>
           </li>
