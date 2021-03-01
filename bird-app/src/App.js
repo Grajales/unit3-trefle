@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, Switch, Redirect } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import {    BrowserRouter as Router   } from "react-router-dom";
 import axios from 'axios';
 import Search from './Search';
 import AboutMe from './AboutMe/AboutMe';
 import Show from './Show/Show';
-const FRUIT_SEARCH = '&q=coconut'
+import List from './List';
+import DropDownList from "./HomePageList";
+
+const BASE_URL = 'https://trefle.io/api/v1/plants/search?'
+const CORS_URL = "https://cors-anywhere.herokuapp.com/"
+const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals"
+const PQUERY = "&q="
+const FRUIT = 0
+const VEGGIE = 1
+const FLOWER = 2
 
 
 class App extends Component {
@@ -14,7 +23,8 @@ class App extends Component {
     super(props)
     this.state = {
       plants: [],
-      species: this.props.species
+      speciesList: [],
+      species: []
     }
   }
   componentDidMount = () => {
@@ -22,8 +32,9 @@ class App extends Component {
       // headers: {
       //        }
     }
-    let response = axios.get('https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals'+FRUIT_SEARCH)
-      .then(response => {
+
+    let response = axios.get(CORS_URL+BASE_URL+TOKEN+PQUERY+ DropDownList[FRUIT][0])
+       .then(response => {
         console.log(response)
         this.setState({
           plants: response.data
@@ -36,8 +47,21 @@ class App extends Component {
   }
   render() {
     // console.log(this.state)
-    console.log("plants", this.state.plants)
-    console.log('Species', this.props.species)
+    console.log("plants",this.state.plants)
+    let chosenData = this.state.plants.data
+    
+    if (chosenData){
+      
+      for (let i=0; i<chosenData.length; i++){
+        this.state.speciesList[i] = chosenData[i].links.self
+        this.state.species[i] = chosenData[i].scientific_name
+
+      }
+      console.log(this.state.speciesList)
+      console.log(this.state.species)
+    }
+    
+    // for (let i=0; i<)
     return (
       <div>
         <main>
@@ -50,19 +74,31 @@ class App extends Component {
           </Link>
 
           <Switch>
-
-            <Router>
-              <Route exact path='/aboutme/' component={AboutMe} />
-            </Router>
-              <Route path='/search/'
-                render={(routerProps) =>
-                  <Search {...this.state} />
-                }>
+          
+          <Router>
+            <Route exact path='/aboutme/' component={AboutMe} />
+          
+          </Router>
+            <Route to='/search/'
+              render={(props) =>
+              (<Search {...this.state} />
+              )}
+            />
+            
+            <Route path='/search/'
+              render={(routerProps) =>
+              <Search {...this.state} />
+              }> 
               </Route>
-              <Route path='/show/'
-                render={(routerProps) =>
-                  <Show species={this.state} {...routerProps} />
-                }>
+              <Route path='/list/'
+              render={(routerProps) =>
+              <List {...this.state} />
+              }> 
+              </Route>
+            <Route path='/show/'
+              render={(routerProps) =>
+              <Show species={this.state} {...routerProps} />
+              }> 
               </Route>
           </Switch>
 
