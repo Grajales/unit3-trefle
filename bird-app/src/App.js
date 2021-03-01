@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, Switch, Redirect } from "react-router-dom";
-//import Homepage from "./Homepage";
-//import Show from "./Show";
+import {    BrowserRouter as Router   } from "react-router-dom";
 import axios from 'axios';
 import Search from './Search';
+import AboutMe from './AboutMe/AboutMe';
 import Show from './Show/Show';
 import List from './List';
 import DropDownList from "./HomePageList";
@@ -32,9 +32,14 @@ class App extends Component {
       // headers: {
       //        }
     }
+<<<<<<< HEAD
 
     let response = axios.get(CORS_URL+BASE_URL+TOKEN+PQUERY+ DropDownList[FRUIT][0])
        .then(response => {
+=======
+    let response = axios.get('https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals')
+      .then(response => {
+>>>>>>> master
         console.log(response)
         this.setState({
           plants: response.data
@@ -65,10 +70,26 @@ class App extends Component {
     return (
       <div>
         <main>
+
           <Link to='/'>
             <h1>Header</h1>
           </Link>
+          <Link to='/aboutme/'>
+            <h1>About Us</h1>
+          </Link>
+
           <Switch>
+          
+          <Router>
+            <Route exact path='/aboutme/' component={AboutMe} />
+          
+          </Router>
+            <Route to='/search/'
+              render={(props) =>
+              (<Search {...this.state} />
+              )}
+            />
+            
             <Route path='/search/'
               render={(routerProps) =>
               <Search {...this.state} />
@@ -86,9 +107,9 @@ class App extends Component {
               </Route>
           </Switch>
 
-        </main>
+        </main >
 
-      </div>
+      </div >
     );
   }
 }
