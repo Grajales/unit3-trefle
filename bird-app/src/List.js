@@ -4,35 +4,44 @@ import Show from './Show/Show';
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import axios from 'axios';
 
+// START URL Build
 
-/* Working URL w/o CORS
-    https://trefle.io/api/v1/species/search?q=Abies%20alba&limit=3&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
-*/
-const CORS_URL = "https://cors-anywhere.herokuapp.com/" //Why don't we need CORS here but do on APP... very strange indeed.
-const BASE_URL = 'https://trefle.io/api/v1/species/search?q='
-let species = "Abies%20alba"; //"cocos-nucifera"
-const PAGE_LIMIT = "&limit=3"
-const TOKEN = "&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals"
-//const QSPECIES = "api/v1/species/"  ;//  didn't work... plan to delete
+//Example URL:  https://trefle.io/api/v1/species/cocos-nucifera?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
+//In order, we have..
+const CORS_URL = "https://cors-anywhere.herokuapp.com/";
+const BASE2_URL = 'https://trefle.io/api/v1/species/';
+const TOKEN = "?&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
+const SEARCH_QUALIFIER = '&q=';
+//Species hyphenated name here, local variable: hyphenedSpeciesName
+
+// End URL Build
 
 class List extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            species: [],
             selectedSpecies: "",
+            species: [],
+            
         }
     }
 
     handleSelection = (event) => {
+
         event.preventDefault();
-        console.log('Species selected', event.target.innerText);
+        
+        // console.log('Species selected', event.target.innerText);
+        
+        let hyphenedSpeciesName = "";
+        hyphenedSpeciesName = event.target.innerText.replace(" ", "-");
 
-        this.setState({ selectedSpecies: event.target.innerText });
+        // console.log(tempString);
+        // console.log(CORS_URL + BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName);
 
-        let response = axios.get(CORS_URL + BASE_URL + this.state.selectedSpecies + PAGE_LIMIT + TOKEN)
+        let response = axios.get(CORS_URL + BASE2_URL+ TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName)
             .then(response => {
                 this.setState({ species: response.data.data });
+                this.setState({ selectedSpecies: event.target.innerText});
 
                 console.log("got species: ", this.state);
             })
@@ -43,9 +52,12 @@ class List extends Component {
 
     render() {
 
+
+
         let speciesNameList = []
         let speciesNames = this.props.species
-        console.log("List", speciesNames)
+        
+        console.log("List props", this.props)
 
         if (speciesNames !== undefined) {
             for (let i = 0; i < speciesNames.length; i++) {
