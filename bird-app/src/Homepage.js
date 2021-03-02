@@ -23,11 +23,11 @@ class Homepage extends Component {
         // )
         return (
             <div className='Homepage'>
-                {/* <form className='Search-Form'> */}
-                    <div class='column'>
-                        {/* <div className='Flower'>
+                <form className='Search-Form'>
+                    <div className='column'>
+                        <div className='Flower'>
                             <label className='Search-Flower' >Flowers </label>
-                        </div> */}
+                        </div>
                         <img src={plantPhoto} alt="Flowers" />
                     </div>
                     {/* <div className='Search-Common-Name'>
@@ -41,10 +41,10 @@ class Homepage extends Component {
                         <button className='Search-Button' onClick={this.handleSearch}>Search</button>
                     </div> */}
 
-                    <div class='column'>
-                        {/* <div className='Fruit'>
+                    <div className='column'>
+                        <div className='Fruit'>
                             <label className='Search-Fruit-L' >Fruit</label>
-                        </div> */}
+                        </div>
                         <img src={plantPhoto} alt="Fruit" />
                     </div>
                     {/* <label className='Search-Common-Name' >Select a Fruit </label>
@@ -71,10 +71,14 @@ class Homepage extends Component {
                     </select>
                     <button className='Search-Button' onClick={this.handleSearch}>Search</button> */}
 
-                {/* </form> */}
+                    </form> 
             </div>
         )
     }
 }
 
 export default Homepage;
+
+
+
+
