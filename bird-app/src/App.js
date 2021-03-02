@@ -92,7 +92,7 @@ class App extends Component {
                 <List {...this.state} />
               }>
             </Route>
-            <Route path='/show/'
+            <Route exact path='/show/'
               render={(routerProps) =>
                 <Show species={this.state} {...routerProps} />
               }>

@@ -9,20 +9,20 @@ Owner: Paula Teel
 URL: [https://github.com/PJTeel/unit3-birdapp]()
 
 
-## eBird API  
+## Trefle API  
 - API documentation
-    [https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest]()
-- API Data info link:
-    [https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest]()
-- Activate 
-- Activation link from sign up email
+    [https://docs.trefle.io/docs/guides/getting-started]()
+- API Data examples:
+    [https://docs.trefle.io/docs/examples/snippets]()
+
 
 
 ## Account Log in
-- User name: chickadies
-- Password: hummingbird
-- API Key: ds3o3kshtmmo
-- To sign up for a key: [https://ebird.org/api/keygen]()
+- User name: planters
+- Password:  Blackoak
+- API Key: Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
+- Email: lgrajales5000@gmail.com
+- To sign up for a key: [https://docs.trefle.io/docs/guides/getting-started]()
 
 ## Get started with our eBird Essentials
 Bird Essentials
