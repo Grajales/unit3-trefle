@@ -98,7 +98,7 @@ class App extends Component {
             <Route path='/show/:SpeciesName'
               render={(routerProps) =>
                 // <Show species={this.state} {...routerProps} />
-                <Show {...this.state} {...routerProps} />
+                <Show {...routerProps} />
               }>
             </Route>
           </Switch>

@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  margin-left: 5vw;
+  /* margin-left: 5vw; */
   color: rgb(59, 33, 18);
 }
 
 .AboutMe-Intro-Div {
-  margin-left: 5vw;
+  margin-left: 1vw;
+  font-size: 14pt;
 }
 
 .AboutMe-logo {
@@ -13,7 +14,7 @@
   height: 15vmin;
   pointer-events: none;
   border-radius: 10px;
-  border: solid rgb(41, 102, 67) 0.25vw;
+  border: solid rgb(41, 102, 67) 0.4vw;
 }
 
 .AboutMe-Team-Hdr{
@@ -24,9 +25,11 @@
   margin-left: 5vw;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .AboutMe-Cohort{
+  
   
 }
 
@@ -35,5 +38,6 @@
   height: 20vmin;
   pointer-events: none;
   border-radius: 10px;
-  border: solid rgb(41, 102, 67) 0.25vw;
+  border: solid rgb(41, 102, 67) 0.4vw;
+  margin-left: 5vw;
 }

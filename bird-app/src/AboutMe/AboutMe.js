@@ -19,10 +19,14 @@ class AboutMe extends Component {
             <img src={ThreeAcorns} alt="" className='AboutMe-logo' />
             <p className='AboutMe-Intro'>
               This project has been a collaborative effort between the three cohorts/acorns below.
-              <p>Through this project we have had the pleasure to work closely with Joseph/squirrel, our instructor, who
-              deserves special thanks for answering all our questions with a smile on his face.
-              His knowledge, and humor, have helpded each of us grow.</p>
-              <p>While none of us are Oaks at this time, we are, with time and encouagement growing.</p></p>
+              <p>Through this project we have had the pleasure to work closely with Joseph/squirrel, 
+              our instructor, </p>
+              <p>who deserves special thanks for answering all our questions with
+              a smile on his face. </p>
+              <p>His knowledge, and humor, have helped each of us grow.</p>
+              <br></br>
+              <p>While none of us are Oaks at this point, we are, with time and encouagement growing.</p></p>
+            <br></br>
           </div>
           <h2 className="AboutMe-Team-Hdr">Three Acorns and a Squirrels</h2>
           <div className="AboutMe-Team">

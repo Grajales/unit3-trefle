@@ -13,7 +13,7 @@ const BASE2_URL = 'https://trefle.io/api/v1/species/';
 const TOKEN = "?&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
 const SEARCH_QUALIFIER = '&q=';
 //Species hyphenated name here, local variable: hyphenedSpeciesName
-
+//https://trefle.io/api/v1/species/cocos-nucifera?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
 // End URL Build
 
 class List extends Component {
@@ -37,7 +37,8 @@ class List extends Component {
         // console.log(tempString);
         // console.log(CORS_URL + BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName);
 
-        let response = axios.get(CORS_URL + BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName)
+        let response = axios.get(CORS_URL + BASE2_URL + hyphenedSpeciesName + TOKEN )
+        //let response = axios.get(BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName)
             .then(response => {
                 this.setState({ species: response.data.data });
                 this.setState({ selectedSpecies: event.target.innerText });
