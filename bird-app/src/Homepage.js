@@ -30,7 +30,7 @@ class Homepage extends Component {
                         </div>
                         <img src={plantPhoto} alt="Flowers" />
                     </div>
-                    <div className='Search-Common-Name'>
+                    {/* <div className='Search-Common-Name'>
                         <label className='Search-Common-Name' >Select a Flower </label>
                         <select name="birdsList" id="plants-list">
                             <option value="">Choose flower</option>
@@ -39,39 +39,39 @@ class Homepage extends Component {
                             <option value="flower3">{flowerList[2]}</option>
                         </select>
                         <button className='Search-Button' onClick={this.handleSearch}>Search</button>
-                    </div>
+                    </div> */}
 
                     <div className='column'>
                         <div className='Fruit'>
                             <label className='Search-Fruit-L' >Fruit</label>
                         </div>
-                        <img src={plantPhoto} alt="Trees" />
+                        <img src={plantPhoto} alt="Fruit" />
                     </div>
-                    <label className='Search-Common-Name' >Select a Fruit </label>
+                    {/* <label className='Search-Common-Name' >Select a Fruit </label>
                     <select name="birdsList" id="plants-list">
                         <option value="">Choose fruit</option>
                         <option value="fruit1">{fruitList[0]}</option>
                         <option value="fruit2">{fruitList[1]}</option>
                         <option value="fruit3">{fruitList[2]}</option>
                     </select>
-                    <button className='Search-Button' onClick={this.handleSearch}>Search</button>
+                    <button className='Search-Button' onClick={this.handleSearch}>Search</button> */}
 
                     <div class='column'>
-                        <div className='Vegetable'>
+                        {/* <div className='Vegetable'>
                             <label className='Search-Vegetable-L' >Vegetable</label>
-                        </div>
+                        </div> */}
                         <img src={plantPhoto} alt="Vegetables" />
                     </div>
-                    <label className='Search-Common-Name' >Select a Vegetable </label>
+                    {/* <label className='Search-Common-Name' >Select a Vegetable </label>
                     <select name="birdsList" id="plants-list">
                         <option value="">Choose vegetable</option>
                         <option value="veggie1">{veggieList[0]}</option>
                         <option value="veggie2">{veggieList[1]}</option>
                         <option value="veggie3">{veggieList[2]}</option>
                     </select>
-                    <button className='Search-Button' onClick={this.handleSearch}>Search</button>
+                    <button className='Search-Button' onClick={this.handleSearch}>Search</button> */}
 
-                </form>
+                    </form> 
             </div>
         )
     }
