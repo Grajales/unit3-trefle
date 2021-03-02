@@ -1,7 +1,7 @@
 const DropDownList = [
     ["coconut", "pineapple", "apple"],
-   ["pepper", "tomato", "kale"],
-     [ "orchid", "rose", "tulip"]
+    ["pepper", "tomato", "kale"],
+    ["orchid", "rose", "tulip"]
 
 ]
-module.exports =  DropDownList;
+module.exports = DropDownList;
