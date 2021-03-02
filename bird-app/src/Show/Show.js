@@ -25,6 +25,12 @@ class Show extends Component {
     //      })
     //  }
     render(){
+      console.log("Show page props: ", this.props.location.state);
+      //expecting this.props.selectedSpecies: "",
+      //      this.props.species: [],
+
+      debugger;
+
       varImages = this.props.species.species[0].data.images
       let imageKeys = Object.keys(varImages)
       // console.log("varImages",Object.keys(varImages))
