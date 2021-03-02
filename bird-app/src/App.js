@@ -3,14 +3,14 @@ import './App.css';
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import axios from 'axios';
-import Search from './Search';
+import Search from './Search'; // Used for initial code dev, not needed in production
 import AboutMe from './AboutMe/AboutMe';
 import Show from './Show/Show';
 import List from './List';
-import DropDownList from "./HomePageList";
+import DropDownList from "./Homepage/HomePageList";
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import Homepage from './Homepage'
+import Homepage from './Homepage/Homepage'
 
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?'
 const CORS_URL = "https://cors-anywhere.herokuapp.com/"
@@ -32,27 +32,28 @@ class App extends Component {
       
     }
   }
-  componentDidMount = () => {
-    let config = {
-      // headers: {
-      //        }
-    }
+  // componentDidMount = () => {
+  //   let config = {
+  //     // headers: {
+  //     //        }
+  //   }
 
-    let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
-      .then(response => {
-        console.log(response)
-        this.setState({
-          plants: response.data
-        })
+  //   let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
+  //     .then(response => {
+  //       // console.log(response)
+  //       this.setState({
+  //         plants: response.data
+  //       })
 
-      })
-      .catch(error => {
-        console.log('look here', error)
-      })
-  }
+  //     })
+  //     .catch(error => {
+  //       console.log('look here', error)
+  //     })
+  // }
+
   render() {
     // console.log(this.state)
-    console.log("plants", this.state.plants)
+    // console.log("plants", this.state.plants)
     let chosenData = this.state.plants.data
 
     if (chosenData) {
@@ -84,11 +85,11 @@ class App extends Component {
                 <Homepage {...this.state} />
               }>
             </Route>
-            <Route exact path='/search/'
+            {/* <Route exact path='/search/'
               render={(routerProps) =>
                 <Search {...this.state} />
               }>
-            </Route>
+            </Route> */}
             <Route exact path='/list/'
               render={(routerProps) =>
                 <List {...this.state} />

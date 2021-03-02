@@ -16,7 +16,7 @@ class AboutMe extends Component {
         <main>
           <div className='AboutMe-Intro-Div'>
             <h1 className='AboutMe-Intro-Hdr'>About Us</h1>
-            <img src={ThreeAcorns} alt="three acorns image" className='AboutMe-logo' />
+            <img src={ThreeAcorns} alt="" className='AboutMe-logo' />
             <p className='AboutMe-Intro'>
               This project has been a collaborative effort between the three cohorts/acorns below.
               <p>Through this project we have had the pleasure to work closely with Joseph/squirrel, our instructor, who
@@ -24,26 +24,26 @@ class AboutMe extends Component {
               His knowledge, and humor, have helpded each of us grow.</p>
               <p>While none of us are Oaks at this time, we are, with time and encouagement growing.</p></p>
           </div>
-          <h2 className="AboutMe-Team-Hdr">It Takes a Team</h2>
+          <h2 className="AboutMe-Team-Hdr">Three Acorns and a Squirrels</h2>
           <div className="AboutMe-Team">
             <div classname='AboutMe-Cohort'>
-              <img src={Liliana} className='AboutMe-Img' />
+              <img src={Liliana} alt="" className='AboutMe-Img' />
               <h2 className="AboutMe-Name">Liliana</h2>
               <p className='AboutMe-bio'>my bio goes here</p>
             </div>
             <div classname='AboutMe-Cohort'>
-              <img src={Paula} className='AboutMe-Img' />
+              <img src={Paula} alt="" className='AboutMe-Img' />
               <h2 className="AboutMe-Name">Paula</h2>
               <p className='AboutMe-bio'>my bio goes here</p>
             </div>
             <div classname='AboutMe-Cohort'>
-              <img src={Mark} className='AboutMe-Img' />
+              <img src={Mark} alt="" className='AboutMe-Img' />
               <h2 className="AboutMe-Name">Mark</h2>
               <p className='AboutMe-bio'>my bio goes here</p>
             </div>
 
             <div classname='AboutMe-Instructor'>
-              <img src={Joseph} className='AboutMe-Img' />
+              <img src={Joseph} alt="" className='AboutMe-Img' />
               <h2 className="AboutMe-Name">Joseph</h2>
               <p className='AboutMe-bio'>my bio goes here</p>
             </div>

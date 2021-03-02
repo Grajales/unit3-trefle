@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import plantArray from './plantArray';
+import plantArray from './Homepage/Assets/Testdata/plantArray';
 
-const SEARCH_BUTTON = 1;
 const COMMON_NAME_CB = 1;
 const BIRD_LIST_DD = 2; //Drop-Down List
 const SCI_NAME_CB = 3;
@@ -96,7 +95,7 @@ class Search extends Component {
                             <option value="Mute Swan">Mute Swan</option>
                         </select>
                     </div>
-                    <img src={imageURL}/>
+                    <img src={imageURL} alt=""/>
                     <div className='Search-Sci-Name'>
                         <input type='checkbox' name='sci-name' className='Search-Sci-Name-Cb' />
                         <label className='Search-Common-Name' >Scientific Name</label>
@@ -119,4 +118,4 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default Search; // Don't export as unused, we will delete shortly.

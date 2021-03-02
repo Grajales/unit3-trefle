@@ -1,7 +1,7 @@
 import React from "react";
 import './Footer.css';
 
-function Footer () {
+function Footer() {
     return (
         <div className='Footer'>
             <h1>Copyright 2021</h1>
