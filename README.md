@@ -24,50 +24,44 @@ URL: [https://github.com/PJTeel/unit3-birdapp]()
 - Email: lgrajales5000@gmail.com
 - To sign up for a key: [https://docs.trefle.io/docs/guides/getting-started]()
 
-## Get started with our eBird Essentials
-Bird Essentials
-The Explore Data tab is a good place to begin. Range maps show where species are found, bar charts show migration timing, and you can even sign up for Alerts to learn about interesting birds as soon as they are reported. The Explore a Location tool provides a dashboard style overview of all the eBird activity in a region. From here there are links to bar charts, recent sightings, and the best local birding hotspots.
-[http://ebird.org/ebird/places]()
+## Get started with our Trefle
+Trefle is an open, freely accessible botanical global data source and REST API. It includes 1 million indexed plants. The data available includes: species, varieties, hybrids, sub-species, forms and cultivars.
 
-## Bird Observations
-All bird observations are valuable, and every sighting--no matter how common the species--is important for understanding where and when birds occur around the globe. Your observations appear with others from the eBird community on eBird’s maps and graphs. Researchers download these data, and their scientific findings are used to make more informed conservation decisions. See eBird Science Use for more information.
-[http://ebird.org/content/ebird/about/science-use]()
-## Example Bird Page
-Flamingo Example: [https://ebird.org/species/grefla2/MX]()
+Trefle is considered to be a complete plants API for researchers, gardeners & nature lovers and students.
+
+## Example Plant Page
+Garden tomato example: [https://trefle.io/explore/species/solanum-lycopersicum#specifications]
+
 
 ## Needs List
 ### Bronze Level
 - Data is accessible by everyone without need to log in or sign up
-- Search by common name
-- Image
-- Bird blurb (description)
-- Show something related to location
+- Scope limited to three categories: Fruit, Veggie, Flower
+- Ability to search by common name from a drop down list
+- Display image(s)
+- Brief plant description including species name
 - Heroku deployment
 
-- Research: Sound <= Audubon page <= get assets from that page based on common name of the bird
-- Look for api
-- If we have web page, can can we programmatically e.g. the sound off the page programmatically.
-- Web pages return html.  How do you parse html?
-- DOM traversal based on common name
-- Issue:  how does axios deal with html? 
-- Risk:  The web page is revamped which may break our DOM traversal.
-- Conditional render
-- Determine scope
-
 ## Silver
-- Create an account to store your sightings
+- Create an account for users to store his/her own plants
 - Db to store user info
-- My Sightings Section
+- My Plants Section
 - Journal entry
 - Journal image
 
 ## Gold
-- Video (++) display
 - Mobile app
 
 ## Platinum
-- Record US address location of sighting (++) into db table that is joined to API
-- Display on a map
+- Display growing region for each plant species on a map
+
+## User Interface
+User stories:
+As a user I would want the following options available on the Home page:
+- Perform a search based on the plant common name.
+- View a picture(s) using the plant common name.
+- Gather information using the plant common name.
+- View of list of plants included in a species.
 
 
 
