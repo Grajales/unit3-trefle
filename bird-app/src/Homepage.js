@@ -33,7 +33,7 @@ class Homepage extends Component {
                     <img src={plantPhoto} alt="Trees"/>
                 </div>
                 <div class='column'>
-                    <img src={plantPhoto} alt="Vegetables"/>
+                    <img src={plantPhoto} alt="Fruit"/>
                 </div>
 
         </div>

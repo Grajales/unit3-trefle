@@ -77,17 +77,17 @@ class App extends Component {
               <Route exact path='/aboutme/' component={AboutMe} />
 
             
-            <Route path='/'
+            <Route exact path='/'
               render={(props) =>
                 <Homepage {...this.state} />
               }>
             </Route>
-            <Route path='/search/'
+            <Route exact path='/search/'
               render={(routerProps) =>
                 <Search {...this.state} />
               }>
             </Route>
-            <Route path='/list/'
+            <Route exact path='/list/'
               render={(routerProps) =>
                 <List {...this.state} />
               }>
