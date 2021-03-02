@@ -22,42 +22,42 @@ class List extends Component {
         this.state = {
             selectedSpecies: "",
             species: [],
-            
         }
     }
 
     handleSelection = (event) => {
 
         event.preventDefault();
-        
+
         // console.log('Species selected', event.target.innerText);
-        
+
         let hyphenedSpeciesName = "";
         hyphenedSpeciesName = event.target.innerText.replace(" ", "-");
 
         // console.log(tempString);
         // console.log(CORS_URL + BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName);
 
-        let response = axios.get(CORS_URL + BASE2_URL+ TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName)
+        let response = axios.get(CORS_URL + BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName)
             .then(response => {
                 this.setState({ species: response.data.data });
-                this.setState({ selectedSpecies: event.target.innerText});
+                this.setState({ selectedSpecies: event.target.innerText });
 
                 console.log("got species: ", this.state);
+
+                //redirect
             })
             .catch(error => {
                 console.log('LIST ERROR:', error);
             })
     }
 
-    render() {
+    showSpeciesList() {
 
+        let speciesNameList = [];
+        let speciesNames = this.props.species;
 
-
-        let speciesNameList = []
-        let speciesNames = this.props.species
-        
-        console.log("List props", this.props)
+        console.log("List props", this.props);
+        console.log('species name list: ', speciesNameList);
 
         if (speciesNames !== undefined) {
             for (let i = 0; i < speciesNames.length; i++) {
@@ -68,28 +68,40 @@ class List extends Component {
             }
         }
 
-        console.log('species name list: ', speciesNameList);
+        return (
+
+            <form className='List-Form'>
+                <h1>Species List</h1>
+                <div>
+                    <label for="Species-List">Select a species from the list below to learn more about it:</label>
+                    <ul>
+                        {speciesNameList}
+                    </ul>
+                </div>
+            </form>
+
+        )
+
+
+
+    }
+
+    redirectToShowPage() {
 
         return (
+            <Redirect
+                to={{
+                    pathname: `/show/${this.state.selectedSpecies}`,
+                    state: this.state
+                }}
+            />
+        )
+    }
+
+    render() {
+        return (
             <div>
-                <form className='List-Form'>
-                    <h1>Species List</h1>
-                    <div>
-                        <label for="Species-List">Select a species from the list below to learn more about it:</label>
-                        <ul>
-                            {speciesNameList}
-                        </ul>
-                    </div>
-
-
-                    {/* need to remove Route from Apps.js */}
-                    < Route path='/show/'
-                        render={(routerProps) =>
-                            <Show species={this.state} {...routerProps} />
-                        }>
-                    </Route>
-
-                </form>
+                { ( this.state.selectedSpecies != "" ) ? this.redirectToShowPage() : this.showSpeciesList() }
             </div>
         );
     }

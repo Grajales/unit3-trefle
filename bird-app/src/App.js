@@ -94,9 +94,10 @@ class App extends Component {
                 <List {...this.state} />
               }>
             </Route>
-            <Route exact path='/show/'
+            <Route path='/show/:SpeciesName'
               render={(routerProps) =>
-                <Show species={this.state} {...routerProps} />
+                // <Show species={this.state} {...routerProps} />
+                <Show {...this.state} {...routerProps} />
               }>
             </Route>
           </Switch>
