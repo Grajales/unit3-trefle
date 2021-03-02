@@ -1,11 +1,11 @@
 .Footer {
     height: .55in;
     background-color: rgb(41, 102, 67);
-    color: rgb(59, 33, 18);
     padding-top: .1in;
     text-align: center;
-    font-size: 7pt;
+    font-size: 5pt;
+    margin-left: -100px;
 }
 .Footer h1 {
-    color: rgb(59, 33, 18);
+    color:cornsilk;
 }
