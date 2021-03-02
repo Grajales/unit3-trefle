@@ -25,9 +25,11 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      selectedPlantName: "",
       plants: [],
       speciesList: [],
-      species: []
+      species: [],
+      
     }
   }
   componentDidMount = () => {
