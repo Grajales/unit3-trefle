@@ -24,7 +24,7 @@ class Homepage extends Component {
         return (
             <div className='Homepage'>
                 <form className='Search-Form'>
-                    <div class='column'>
+                    <div className='column'>
                         <div className='Flower'>
                             <label className='Search-Flower' >Flowers </label>
                         </div>
@@ -41,7 +41,7 @@ class Homepage extends Component {
                         <button className='Search-Button' onClick={this.handleSearch}>Search</button>
                     </div>
 
-                    <div class='column'>
+                    <div className='column'>
                         <div className='Fruit'>
                             <label className='Search-Fruit-L' >Fruit</label>
                         </div>
