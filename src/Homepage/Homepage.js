@@ -21,9 +21,9 @@ const FLOWER = 2;
 const CORS_URL = "https://cors-anywhere.herokuapp.com/";
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?';
 // Use one token, as sometimes the run out due to daily limits on usage for free CORS service
-// const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
-const TOKEN = "token=RagxGBdlIoZiaL5DMYJQoNGenRqxtEuxFHUOlSgSF6w";
-// const TOKEN = "token=cULsILGocMVtRzurtWWwSN1TQ6kXv7Ek78qeA9nPZjM";
+//const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
+//const TOKEN = "token=RagxGBdlIoZiaL5DMYJQoNGenRqxtEuxFHUOlSgSF6w";
+const TOKEN = "token=cULsILGocMVtRzurtWWwSN1TQ6kXv7Ek78qeA9nPZjM";
 const SEARCH_QUALIFIER = '&q=';
 //User Selection from our list then follows at the end
 
@@ -54,8 +54,6 @@ class Homepage extends Component {
     }
 
 
-
-
     handleSelection = (event) => {
         event.preventDefault();
 
@@ -65,7 +63,7 @@ class Homepage extends Component {
         let response = axios.get(getURL)
             .then(response => {
                 this.setState({ plantList: response.data.data });
-                this.setState({ userSelection: event.target.innerText });
+                this.setState({ userSelection: selectedPlantName });
 
                 console.log("HomePage got selection : ", this.state);
             })
@@ -73,7 +71,6 @@ class Homepage extends Component {
                 console.log('HomePage ERROR:', error);
             })
     }
-
 
 
     showUserChoices(vegatableList, fruitList, flowerList) {
@@ -113,6 +110,7 @@ class Homepage extends Component {
         )
     }
 
+
     redirectToListPage() {
         return (
             <Redirect
@@ -122,7 +120,6 @@ class Homepage extends Component {
                 }}
             />
         )
-
     }
 
 
