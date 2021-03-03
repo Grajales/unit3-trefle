@@ -8,7 +8,8 @@ import axios from 'axios';
 
 //Example URL:  https://trefle.io/api/v1/species/cocos-nucifera?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
 //In order, we have..
-const CORS_URL = "https://cors-anywhere.herokuapp.com/";
+// const CORS_URL = "https://cors-anywhere.herokuapp.com/";
+const CORS_URL = 'http://api.allorigins.win/get?url=';
 const BASE2_URL = 'https://trefle.io/api/v1/species/';
 // const TOKEN = "?&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
 const TOKEN = "?&token=cULsILGocMVtRzurtWWwSN1TQ6kXv7Ek78qeA9nPZjM";
@@ -38,10 +39,17 @@ class List extends Component {
         // console.log(tempString);
         // console.log(CORS_URL + BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName);
 
-        let response = axios.get(CORS_URL + BASE2_URL + hyphenedSpeciesName + TOKEN )
+        let getURL = CORS_URL + encodeURIComponent(BASE2_URL + hyphenedSpeciesName + TOKEN);
+
+
+        let response = axios.get(getURL)
         //let response = axios.get(BASE2_URL + TOKEN + SEARCH_QUALIFIER + hyphenedSpeciesName)
             .then(response => {
-                this.setState({ species: response.data.data });
+
+                response.data.contents = JSON.parse(response.data.contents);
+                console.log("List response: ", response)
+                
+                this.setState({ species: response.data.contents.data });
                 this.setState({ selectedSpecies: event.target.innerText });
 
                 console.log("got species: ", this.state);

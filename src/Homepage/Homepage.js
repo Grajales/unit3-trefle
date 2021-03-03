@@ -18,7 +18,8 @@ const FLOWER = 2;
 
 //Example desired URL:  https://trefle.io/api/v1/plants/search?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals&q=coconut
 //In order, we have..
-const CORS_URL = "https://cors-anywhere.herokuapp.com/";
+// const CORS_URL = "https://cors-anywhere.herokuapp.com/";
+const CORS_URL = 'http://api.allorigins.win/get?url=';
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?';
 // Use one token, as sometimes the run out due to daily limits on usage for free CORS service
 //const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
@@ -58,11 +59,20 @@ class Homepage extends Component {
         event.preventDefault();
 
         let selectedPlantName = event.target.innerText
-        let getURL = CORS_URL + BASE_URL + TOKEN + SEARCH_QUALIFIER + selectedPlantName;
+
+        let getURL = CORS_URL + encodeURIComponent(BASE_URL + TOKEN + SEARCH_QUALIFIER + selectedPlantName);
+        console.log("App getURL: ", getURL);
+
+        // let getURL = CORS_URL + BASE_URL + TOKEN + SEARCH_QUALIFIER + selectedPlantName;
 
         let response = axios.get(getURL)
             .then(response => {
-                this.setState({ plantList: response.data.data });
+                console.log("HP response.data: ", response);
+
+                response.data.contents = JSON.parse(response.data.contents);
+
+                // this.setState({ plantList: response.data.data });
+                this.setState({ plantList: response.data.contents.data });
                 this.setState({ userSelection: selectedPlantName });
 
                 console.log("HomePage got selection : ", this.state);

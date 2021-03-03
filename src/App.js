@@ -15,8 +15,10 @@ import './Show/Show.css';
 import './Header/Header.css';
 
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?'
-const CORS_URL = "https://cors-anywhere.herokuapp.com/"
+// const CORS_URL = "https://cors-anywhere.herokuapp.com/";
+const CORS_URL = 'https://api.allorigins.win/get?url=';
 const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals"
+const TEST_URL = 'https://trefle.io/api/v1/plants/search?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals&q=coconut';
 const PQUERY = "&q="
 const FRUIT = 0
 const VEGGIE = 1
@@ -41,9 +43,14 @@ class App extends Component {
       //        }
     }
 
-    let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
+    let getURL = CORS_URL + encodeURIComponent(TEST_URL);
+    console.log("App getURL: ", getURL);
+
+    // let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
+    let response = axios.get(getURL)
       .then(response => {
-        // console.log(response)
+        console.log("App response: ", response);
+        response.data.contents = JSON.parse(response.data.contents);
         this.setState({
           plants: response.data
         })
@@ -94,7 +101,6 @@ class App extends Component {
             
             <Route path='/show/:SpeciesName'
               render={(routerProps) =>
-                // <Show species={this.state} {...routerProps} />
                 <Show {...routerProps} />
               }>
             </Route>
