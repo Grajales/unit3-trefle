@@ -32,24 +32,24 @@ class App extends Component {
       
     }
   }
-  // componentDidMount = () => {
-  //   let config = {
-  //     // headers: {
-  //     //        }
-  //   }
+  componentDidMount = () => {
+    let config = {
+      // headers: {
+      //        }
+    }
 
-  //   let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
-  //     .then(response => {
-  //       // console.log(response)
-  //       this.setState({
-  //         plants: response.data
-  //       })
+    let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
+      .then(response => {
+        // console.log(response)
+        this.setState({
+          plants: response.data
+        })
 
-  //     })
-  //     .catch(error => {
-  //       console.log('look here', error)
-  //     })
-  // }
+      })
+      .catch(error => {
+        console.log('look here', error)
+      })
+  }
 
   render() {
     // console.log(this.state)

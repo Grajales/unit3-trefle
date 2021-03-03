@@ -1,5 +1,24 @@
-img{
-    width : 100px;
-    height: 100px;
-    margin: 10px;
+
+img {
+    width: 150px;
+    height: 150px;
+    display: inline;
+    border-color: red;
+    border-width: .25in;
+    /* margin-bottom: .25in;
+    padding-bottom: .25in; */
+}
+.gallery {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: .25in;
+}
+h3{
+    margin:30px;
+}
+h1{
+    margin: 20px;
+}
+p{
+    text-align: left;
 }

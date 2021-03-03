@@ -14,34 +14,32 @@ class Show extends Component {
   render() {
     console.log("Show page props: ", this.props);
     let showData = this.props.location.state
-    console.log("Show page props selected: ", showData.selectedSpecies);
-    console.log("Show page props location.state.species: ", showData.species);
-
     varImages = showData.species.images
     let imageKeys = Object.keys(varImages)
-    // console.log("varImages",Object.keys(varImages))
-    console.log("varImages", imageKeys)
     let speciesImg = []
+    let speciesImg2 = []
     for (let i = 0; i < imageKeys.length; i++) {
-      let imageCount=showData.species.images[Object.keys(varImages)[i]].length;
-      console.log("numbr of images per key",imageCount);
-      speciesImg = showData.species.images[Object.keys(varImages)[i]];
+      speciesImg.push(showData.species.images[Object.keys(varImages)[i]]);
+      for (let j=0; j<3;j++){
+        if(speciesImg[i][Object.keys(speciesImg)[j]]!==undefined){
+      speciesImg2.push(speciesImg[i][Object.keys(speciesImg)[j]])
+        }
       }
-    
-    console.log(speciesImg)
+     }
 
     let galleryImg = [];
-
+    let sc_name=showData.selectedSpecies 
     let c_name = showData.species.common_name;
     let duration = showData.species.duration
     let edible = showData.species.edible
     let ediblepart = showData.species.edible_part
     let famCname = showData.species.family_common_name
-
-    if (speciesImg !== undefined) {
-      galleryImg = speciesImg.map((value, index) => {
+    let height= showData.species.specifications.average_height.cm
+    let growth= showData.species.specifications.growth_habit
+    if (speciesImg2 !== undefined) {
+      galleryImg = speciesImg2.map((value, index) => {
         return (
-          <img src={value.image_url} alt={value.altText} />
+             <img src={value.image_url} alt={value.altText} />
         )
       })
     }
@@ -49,11 +47,10 @@ class Show extends Component {
     return (
       <div>
         <div className='Search'>
-          <h1 className='show-hdr'>Species: {c_name}</h1>
-          <p> This species is part of the <i>  {famCname} </i> and it is a <i> {duration} </i>,
-         it is {edible} and the part that is edible is/are the <i> {ediblepart} </i> </p>
+          <h1 className='show-hdr'> The species <i> {sc_name}</i> </h1>
+          <p> This species common name is <i> {c_name} </i> and it is part of the <i>  {famCname} </i>. It is a <i> {duration} </i>. It grows as a <i> {growth} </i> and its average height is <i> {height} </i> cm. The part that is edible is/are the <i> {ediblepart} </i> </p>
           {/* {if (edible ==true){<i>edible</i>} else {<i>not edible</i>}} */}
-          <h3>Images</h3>
+          <h3>Available Images</h3>
           <div className='gallery'>
             {galleryImg}
 
