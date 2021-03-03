@@ -18,11 +18,12 @@ class AboutMe extends Component {
           <br></br>
           <div className='AboutMe-Intro-Div'>
             <h1 className='AboutMe-Intro-Hdr'>About Us</h1>
+            <br></br>
             <img src={ThreeAcorns} alt="" className='AboutMe-logo' />
             <a href="https://www.etsy.com/listing/830733471/mini-chip-picnic-table?ref=shop_home_active_4">
               <img src={Squirrel} alt="MurayamaWoodworks" className='Squirrel-logo' />
             </a>
-            <img src={Squirrel} alt="" className='Squirrel-logo' />
+            {/* <img src={Squirrel} alt="" className='Squirrel-logo' /> */}
             <br></br>
             <br></br>
             <p className='AboutMe-Intro'>
@@ -47,7 +48,7 @@ class AboutMe extends Component {
             <div classname='AboutMe-Cohort'>
               <img src={Paula} alt="" className='AboutMe-Img' />
               <h2 className="AboutMe-Name">Paula</h2>
-              <p className='AboutMe-bio'>CSS maven and Kanban organizor</p>
+              <p className='AboutMe-bio'>CSS maven, Kanban organizor and future squirrel trainer</p>
             </div>
             <div classname='AboutMe-Cohort'>
               <img src={Mark} alt="" className='AboutMe-Img' />

@@ -38,8 +38,17 @@
 }
 
 .AboutMe-Cohort{
-  
-  
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.AboutMe-bio{
+  display: flex;
+  max-width: 20vw;
+  flex-wrap: wrap;
+  margin-left: 2vw;
+  text-align: center;
 }
 
 .AboutMe-Img {
@@ -48,5 +57,5 @@
   pointer-events: none;
   border-radius: 10px;
   border: solid rgb(41, 102, 67) 0.5vw;
-  margin-left: 5vw;
+  margin-left: 2vw;
 }
