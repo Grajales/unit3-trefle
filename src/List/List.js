@@ -10,7 +10,8 @@ import axios from 'axios';
 //In order, we have..
 const CORS_URL = "https://cors-anywhere.herokuapp.com/";
 const BASE2_URL = 'https://trefle.io/api/v1/species/';
-const TOKEN = "?&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
+// const TOKEN = "?&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
+const TOKEN = "?&token=cULsILGocMVtRzurtWWwSN1TQ6kXv7Ek78qeA9nPZjM";
 const SEARCH_QUALIFIER = '&q=';
 //Species hyphenated name here, local variable: hyphenedSpeciesName
 //https://trefle.io/api/v1/species/cocos-nucifera?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
@@ -67,6 +68,7 @@ class List extends Component {
         console.log(speciesNames);
         console.log('species name list: ', speciesNameListHTML);
 
+        
         if (speciesNames !== undefined) {
             for (let i = 0; i < speciesNames.length; i++) {
                 speciesNameListHTML[i] =
@@ -78,12 +80,16 @@ class List extends Component {
 
         return (
             <form className='List-Form'>
+                <br></br>
                 <h1>Species List</h1>
-                <div>
+                <div className="List">
                     <label for="Species-List">Select a species from the list below to learn more about it:</label>
+                    <br></br>
+                    <br></br>
                     <ul>
                         {speciesNameListHTML}
                     </ul>
+                    <br></br>
                 </div>
             </form>
         )

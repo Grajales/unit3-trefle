@@ -11,6 +11,8 @@ import DropDownList from "./Homepage/HomePageList";
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Homepage from './Homepage/Homepage'
+import './Show/Show.css';
+import './Header/Header.css';
 
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?'
 const CORS_URL = "https://cors-anywhere.herokuapp.com/"
@@ -29,7 +31,7 @@ class App extends Component {
       plants: [],
       speciesList: [],
       species: [],
-      
+
     }
   }
 
@@ -76,26 +78,20 @@ class App extends Component {
           <Header></Header>
 
           <Switch>
+            <Route exact path='/aboutme/' component={AboutMe} />
 
-            
-              <Route exact path='/aboutme/' component={AboutMe} />
-
-            
             <Route exact path='/'
               render={(props) =>
                 <Homepage {...this.state} />
               }>
             </Route>
-            {/* <Route exact path='/search/'
-              render={(routerProps) =>
-                <Search {...this.state} />
-              }>
-            </Route> */}
+            
             <Route exact path='/list/:userSelection'
               render={(routerProps) =>
-                <List {...routerProps}/>
+                <List {...routerProps} />
               }>
             </Route>
+            
             <Route path='/show/:SpeciesName'
               render={(routerProps) =>
                 // <Show species={this.state} {...routerProps} />

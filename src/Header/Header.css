@@ -1,12 +1,11 @@
 *{margin: 0; padding: 0;}
-/* @media screen and (max-width: 1199) */
+/* @media screen and (max-width: 1199); */
+
 .Header {
     height: 10vh;
     background-color: rgb(41, 102, 67);
     color: cornsilk;
     padding-top: 1vh;
-    margin-left: -100px;
-    
 }
 
 .Header li {
@@ -18,11 +17,12 @@
 }
 
 .Header h1 {
-    padding-top: 0;
+    padding-top: 1vh;
     margin-top: 0;
     display: inline;
     /* padding-top: 1vh; */
     float:inline-start;
+    margin-left: 1vw;
     
 }
 
@@ -30,11 +30,15 @@
     width: 7vmin;
     height: 7vmin;
     border-radius: 10px;
-    border: solid rgb(59, 33, 18) 0.25vw;
+    border: solid rgb(95, 63, 45) 0.25vw;
     float: left;
-    margin-top: .5vh;
+    /* margin-top: .3vh; */
     display: inline-flex;
-    margin-left: 9vw;
+    margin-left: 4vw;
+    padding-top: 0;
+    margin-top: 1vh;
+
+    
   }
   
 

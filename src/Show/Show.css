@@ -1,5 +1,26 @@
-img{
-    width : 100px;
-    height: 100px;
-    margin: 10px;
+
+img {
+    width: 150px;
+    height: 150px;
+    display: inline;
+    border-color: red;
+    border-width: .25in;
+    border-radius: 10px;
+    border: solid rgb(41, 102, 67) 0.5vw;
+    margin-bottom: 3vh;
+     
 }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 3vh;
+}
+
+/* <h1 className='show-hdr'>Species: {c_name}</h1> */
+
+.show-hdr {
+    font-size: 20pt;
+}
+
