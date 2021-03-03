@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './List.css';
-import Show from './Show/Show';
+import Show from '../Show/Show';
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import axios from 'axios';
 
@@ -54,15 +54,22 @@ class List extends Component {
 
     showSpeciesList() {
 
-        let speciesNameList = [];
-        let speciesNames = this.props.species;
+        let speciesNameListHTML = []; // Used to store HTML
+        // let speciesNames = this.props.species;
+        // let speciesNames = this.props.location.state.userSelection;
+
+        let speciesNames = this.props.location.state.plantList.map( (value, index) => {
+            return value = this.props.location.state.plantList[index].scientific_name
+        })
+
 
         console.log("List props", this.props);
-        console.log('species name list: ', speciesNameList);
+        console.log(speciesNames);
+        console.log('species name list: ', speciesNameListHTML);
 
         if (speciesNames !== undefined) {
             for (let i = 0; i < speciesNames.length; i++) {
-                speciesNameList[i] =
+                speciesNameListHTML[i] =
                     <li key={i}><a href="#" className='Species-Select-tag' onClick={this.handleSelection}>
                         {speciesNames[i]}
                     </a></li>
@@ -70,21 +77,16 @@ class List extends Component {
         }
 
         return (
-
             <form className='List-Form'>
                 <h1>Species List</h1>
                 <div>
                     <label for="Species-List">Select a species from the list below to learn more about it:</label>
                     <ul>
-                        {speciesNameList}
+                        {speciesNameListHTML}
                     </ul>
                 </div>
             </form>
-
         )
-
-
-
     }
 
     redirectToShowPage() {
@@ -100,9 +102,12 @@ class List extends Component {
     }
 
     render() {
+
+        console.log("List props: ", this.props)
+
         return (
             <div>
-                { ( this.state.selectedSpecies != "" ) ? this.redirectToShowPage() : this.showSpeciesList() }
+                { ( this.state.selectedSpecies !== "" ) ? this.redirectToShowPage() : this.showSpeciesList() }
             </div>
         );
     }

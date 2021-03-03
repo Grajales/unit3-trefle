@@ -6,7 +6,7 @@ import axios from 'axios';
 import Search from './Search'; // Used for initial code dev, not needed in production
 import AboutMe from './AboutMe/AboutMe';
 import Show from './Show/Show';
-import List from './List';
+import List from './List/List';
 import DropDownList from "./Homepage/HomePageList";
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
@@ -32,24 +32,25 @@ class App extends Component {
       
     }
   }
-  // componentDidMount = () => {
-  //   let config = {
-  //     // headers: {
-  //     //        }
-  //   }
 
-  //   let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
-  //     .then(response => {
-  //       // console.log(response)
-  //       this.setState({
-  //         plants: response.data
-  //       })
+  componentDidMount = () => {
+    let config = {
+      // headers: {
+      //        }
+    }
 
-  //     })
-  //     .catch(error => {
-  //       console.log('look here', error)
-  //     })
-  // }
+    let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
+      .then(response => {
+        // console.log(response)
+        this.setState({
+          plants: response.data
+        })
+
+      })
+      .catch(error => {
+        console.log('look here', error)
+      })
+  }
 
   render() {
     // console.log(this.state)
@@ -90,9 +91,9 @@ class App extends Component {
                 <Search {...this.state} />
               }>
             </Route> */}
-            <Route exact path='/list/'
+            <Route exact path='/list/:userSelection'
               render={(routerProps) =>
-                <List {...this.state} />
+                <List {...routerProps}/>
               }>
             </Route>
             <Route path='/show/:SpeciesName'

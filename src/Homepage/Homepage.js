@@ -15,12 +15,16 @@ const FRUIT = 0;
 const VEGETABLE = 1;
 const FLOWER = 2;
 
+
 //Example desired URL:  https://trefle.io/api/v1/plants/search?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals&q=coconut
 //In order, we have..
 const CORS_URL = "https://cors-anywhere.herokuapp.com/";
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?';
-const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
-const SEARCH_QUALIFIER = '=';
+// Use one token, as sometimes the run out due to daily limits on usage for free CORS service
+// const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
+const TOKEN = "token=RagxGBdlIoZiaL5DMYJQoNGenRqxtEuxFHUOlSgSF6w";
+// const TOKEN = "token=cULsILGocMVtRzurtWWwSN1TQ6kXv7Ek78qeA9nPZjM";
+const SEARCH_QUALIFIER = '&q=';
 //User Selection from our list then follows at the end
 
 
@@ -35,7 +39,7 @@ class Homepage extends Component {
     }
 
     buildList(listType) {
-        if ( (HomePageList !== undefined) && (listType >= 0) && (listType <= HomePageList.length) ) {
+        if ((HomePageList !== undefined) && (listType >= 0) && (listType <= HomePageList.length)) {
             let listNames = [];
             for (let i = 0; i < HomePageList.length; i++) {
                 // console.log("listNames: ", i, listNames)
@@ -53,18 +57,12 @@ class Homepage extends Component {
 
 
     handleSelection = (event) => {
-
         event.preventDefault();
 
-        let hyphenedPlantName = "";
-        hyphenedPlantName = event.target.innerText.replace(" ", "-");
+        let selectedPlantName = event.target.innerText
+        let getURL = CORS_URL + BASE_URL + TOKEN + SEARCH_QUALIFIER + selectedPlantName;
 
-        // console.log(tempString);
-        console.log(CORS_URL + BASE_URL + TOKEN + SEARCH_QUALIFIER + hyphenedPlantName);
-
-        debugger ;
-
-        let response = axios.get(CORS_URL + BASE_URL + TOKEN + SEARCH_QUALIFIER + hyphenedPlantName)
+        let response = axios.get(getURL)
             .then(response => {
                 this.setState({ plantList: response.data.data });
                 this.setState({ userSelection: event.target.innerText });
@@ -76,14 +74,9 @@ class Homepage extends Component {
             })
     }
 
-    render() {
 
-        let vegatableList = this.buildList(VEGETABLE);
-        let fruitList = this.buildList(FRUIT);
-        let flowerList = this.buildList(FLOWER);
 
-        console.log(this.FRUIT_IMAGE)
-
+    showUserChoices(vegatableList, fruitList, flowerList) {
         return (
             <div className='Homepage'>
                 <form className='Homepage-Form'>
@@ -117,6 +110,35 @@ class Homepage extends Component {
 
                 </form>
             </div>
+        )
+    }
+
+    redirectToListPage() {
+        return (
+            <Redirect
+                to={{
+                    pathname: `/List/${this.state.userSelection}`,
+                    state: this.state
+                }}
+            />
+        )
+
+    }
+
+
+    render() {
+
+        let vegatableList = this.buildList(VEGETABLE);
+        let fruitList = this.buildList(FRUIT);
+        let flowerList = this.buildList(FLOWER);
+
+        console.log(this.FRUIT_IMAGE)
+
+        return (
+            <div>
+                {  ( this.state.userSelection !== "" ) ? this.redirectToListPage() : this.showUserChoices(vegatableList, fruitList, flowerList)}
+            </div>
+
         )
     }
 }
