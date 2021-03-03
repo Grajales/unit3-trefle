@@ -83,6 +83,7 @@ class List extends Component {
                     <ul>
                         {speciesNameList}
                     </ul>
+                    <br></br>
                 </div>
             </form>
 
