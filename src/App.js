@@ -11,6 +11,8 @@ import DropDownList from "./Homepage/HomePageList";
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Homepage from './Homepage/Homepage'
+import './Show/Show.css';
+import './Header/Header.css';
 
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?'
 const CORS_URL = "https://cors-anywhere.herokuapp.com/"
@@ -32,24 +34,24 @@ class App extends Component {
       
     }
   }
-  // componentDidMount = () => {
-  //   let config = {
-  //     // headers: {
-  //     //        }
-  //   }
+  componentDidMount = () => {
+    let config = {
+      // headers: {
+      //        }
+    }
 
-  //   let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
-  //     .then(response => {
-  //       // console.log(response)
-  //       this.setState({
-  //         plants: response.data
-  //       })
+    let response = axios.get(CORS_URL + BASE_URL + TOKEN + PQUERY + DropDownList[FRUIT][0])
+      .then(response => {
+        // console.log(response)
+        this.setState({
+          plants: response.data
+        })
 
-  //     })
-  //     .catch(error => {
-  //       console.log('look here', error)
-  //     })
-  // }
+      })
+      .catch(error => {
+        console.log('look here', error)
+      })
+  }
 
   render() {
     // console.log(this.state)

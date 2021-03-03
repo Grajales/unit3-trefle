@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Show.css';
+
 var varImages;
 
 class Show extends Component {
@@ -48,12 +49,16 @@ class Show extends Component {
 
     return (
       <div>
-        <div className='Search'>
+        <br></br>
+         <div className='Search'>
           <h1 className='show-hdr'>Species: {c_name}</h1>
+          <br></br>
           <p> This species is part of the <i>  {famCname} </i> and it is a <i> {duration} </i>,
          it is {edible} and the part that is edible is/are the <i> {ediblepart} </i> </p>
           {/* {if (edible ==true){<i>edible</i>} else {<i>not edible</i>}} */}
+          <br></br>
           <h3>Images</h3>
+          <br></br>
           <div className='gallery'>
             {galleryImg}
 

@@ -88,15 +88,6 @@ class Homepage extends Component {
             <div className='Homepage'>
                 <form className='Homepage-Form'>
 
-                    <div className='Homepage-Vegetable'>
-                        <h2 className='Homepage-Vegetable-Label' >Vegetable</h2>
-                        <img className='Homepage-Vegetable-Image' src={VEGETABLE_IMAGE} alt="Vegetable Image" /><br></br>
-                        <label className='Search-Common-Name' >Chose a Vegetable</label>
-                        <ul>
-                            {vegatableList}
-                        </ul>
-                    </div>
-
                     <div className='Homepage-Fruit'>
                         <h2 className='Homepage-Vegetable-Label' >Fruit</h2>
                         <img className='Homepage-Vegetable-Image' src={FRUIT_IMAGE} alt="Vegetable Image" /><br></br>
@@ -112,6 +103,15 @@ class Homepage extends Component {
                         <label className='Search-Common-Name' >Chose a Flower</label>
                         <ul>
                             {flowerList}
+                        </ul>
+                    </div>
+
+                    <div className='Homepage-Vegetable'>
+                        <h2 className='Homepage-Vegetable-Label' >Vegetable</h2>
+                        <img className='Homepage-Vegetable-Image' src={VEGETABLE_IMAGE} alt="Vegetable Image" /><br></br>
+                        <label className='Search-Common-Name' >Chose a Vegetable</label>
+                        <ul>
+                            {vegatableList}
                         </ul>
                     </div>
 

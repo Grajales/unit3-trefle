@@ -1,5 +1,38 @@
-img{
+/* img{
     width : 100px;
     height: 100px;
     margin: 10px;
+} */
+
+
+
+.search {
+    background-color: blue;
+    color: red;
+    }
+
+
+img {
+    width: 150px;
+    height: 150px;
+    display: inline;
+    border-color: red;
+    border-width: .25in;
+    border-radius: 10px;
+    border: solid rgb(41, 102, 67) 0.5vw;
+    /* margin-bottom: .25in;
+    padding-bottom: .25in; */
 }
+
+.gallery {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: .25in;
+}
+
+/* <h1 className='show-hdr'>Species: {c_name}</h1> */
+
+.show-hdr {
+    font-size: 20pt;
+}
+

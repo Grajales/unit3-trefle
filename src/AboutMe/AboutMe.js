@@ -5,6 +5,7 @@ import Mark from './Assets/Mark.jpeg';
 import Paula from './Assets/Paula.jpeg';
 import Joseph from './Assets/Joseph.jpeg';
 import Liliana from './Assets/Liliana.jpeg';
+import Squirrel from './Assets/Squirrel.jpg';
 
 class AboutMe extends Component {
 
@@ -14,9 +15,13 @@ class AboutMe extends Component {
     return (
       <div>
         <main>
+          <br></br>
           <div className='AboutMe-Intro-Div'>
             <h1 className='AboutMe-Intro-Hdr'>About Us</h1>
             <img src={ThreeAcorns} alt="" className='AboutMe-logo' />
+            <img src={Squirrel} alt="" className='Squirrel-logo' />
+            <br></br>
+            <br></br>
             <p className='AboutMe-Intro'>
               This project has been a collaborative effort between the three cohorts/acorns below.
               <p>Through this project we have had the pleasure to work closely with Joseph/squirrel, 
@@ -28,7 +33,8 @@ class AboutMe extends Component {
               <p>While none of us are Oaks at this point, we are, with time and encouagement growing.</p></p>
             <br></br>
           </div>
-          <h2 className="AboutMe-Team-Hdr">Three Acorns and a Squirrels</h2>
+          <h2 className="AboutMe-Team-Hdr">Three Acorns and a Squirrel</h2>
+          <br></br>
           <div className="AboutMe-Team">
             <div classname='AboutMe-Cohort'>
               <img src={Liliana} alt="" className='AboutMe-Img' />
