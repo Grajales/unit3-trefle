@@ -9,7 +9,7 @@ import axios from 'axios';
 //Example URL:  https://trefle.io/api/v1/species/cocos-nucifera?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals
 //In order, we have..
 // const CORS_URL = "https://cors-anywhere.herokuapp.com/";
-const CORS_URL = 'http://api.allorigins.win/get?url=';
+const CORS_URL = 'https://api.allorigins.win/get?url=';
 const BASE2_URL = 'https://trefle.io/api/v1/species/';
 // const TOKEN = "?&token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
 const TOKEN = "?&token=cULsILGocMVtRzurtWWwSN1TQ6kXv7Ek78qeA9nPZjM";

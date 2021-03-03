@@ -19,7 +19,7 @@ const FLOWER = 2;
 //Example desired URL:  https://trefle.io/api/v1/plants/search?token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals&q=coconut
 //In order, we have..
 // const CORS_URL = "https://cors-anywhere.herokuapp.com/";
-const CORS_URL = 'http://api.allorigins.win/get?url=';
+const CORS_URL = 'https://api.allorigins.win/get?url=';
 const BASE_URL = 'https://trefle.io/api/v1/plants/search?';
 // Use one token, as sometimes the run out due to daily limits on usage for free CORS service
 //const TOKEN = "token=Nx5vC1gM25R5WZl5kR7p0V3M7Ry2TXXubzAkG1bQals";
